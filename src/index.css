@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 bg-white font-sans text-ink antialiased;
+    background-image:
+      radial-gradient(circle at top right, rgba(253, 186, 116, 0.18), transparent 36%),
+      radial-gradient(circle at top left, rgba(249, 115, 22, 0.08), transparent 28%);
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  /* Default dark blue to orange gradient for headings */
+  :where(h1, h2, h3):not(.text-white):not([class*="text-orange"]):not([class*="text-white"]) {
+    background-image: linear-gradient(to right, #1B3942, #ea580c, #1B3942);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: background-position 0.6s ease-out;
+  }
+  :where(h1, h2, h3):not(.text-white):not([class*="text-orange"]):not([class*="text-white"]):hover {
+    background-position: right center;
+  }
+
+  /* White and orange gradient for dark background headings */
+  .text-white h1, 
+  .text-white h2, 
+  .text-white h3,
+  h1.text-white,
+  h2.text-white,
+  h3.text-white,
+  [class*="bg-[#1B3942]"] h1,
+  [class*="bg-[#1B3942]"] h2,
+  [class*="bg-[#1B3942]"] h3,
+  [class*="bg-slate-900"] h1,
+  [class*="bg-slate-900"] h2,
+  [class*="bg-slate-900"] h3 {
+    background-image: linear-gradient(to right, #ffffff, #fb923c, #ffffff) !important;
+    background-size: 200% auto !important;
+    transition: background-position 0.6s ease-out !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+  }
+  .text-white h1:hover, 
+  .text-white h2:hover, 
+  .text-white h3:hover,
+  h1.text-white:hover,
+  h2.text-white:hover,
+  h3.text-white:hover,
+  [class*="bg-[#1B3942]"] h1:hover,
+  [class*="bg-[#1B3942]"] h2:hover,
+  [class*="bg-[#1B3942]"] h3:hover,
+  [class*="bg-slate-900"] h1:hover,
+  [class*="bg-slate-900"] h2:hover,
+  [class*="bg-slate-900"] h3:hover {
+    background-position: right center !important;
+  }
+
+  /* Helper to force standard dark gradient on light cards inside dark sections */
+  .force-dark-gradient,
+  .bg-white h1,
+  .bg-white h2,
+  .bg-white h3,
+  [class*="bg-white"] h1,
+  [class*="bg-white"] h2,
+  [class*="bg-white"] h3 {
+    background-image: linear-gradient(to right, #1B3942, #ea580c, #1B3942) !important;
+    background-size: 200% auto !important;
+    transition: background-position 0.6s ease-out !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+  }
+  .force-dark-gradient:hover,
+  .bg-white h1:hover,
+  .bg-white h2:hover,
+  .bg-white h3:hover,
+  [class*="bg-white"] h1:hover,
+  [class*="bg-white"] h2:hover,
+  [class*="bg-white"] h3:hover {
+    background-position: right center !important;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-space {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-orange-100 bg-white shadow-soft;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-orange-300 bg-white px-5 py-3 text-sm font-semibold text-orange-600 transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-50;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes trustOrbFloat {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0) scale(1.04);
+  }
+}
+
+@keyframes trustCheckIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes trustIconPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.18);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+  }
+}
+
+.trust-showcase-wrap {
+  background:
+    radial-gradient(circle at 12% 28%, rgba(249, 115, 22, 0.06), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(253, 186, 116, 0.18), transparent 34%),
+    linear-gradient(180deg, #f7f5f2 0%, #f6f3ef 100%);
+}
+
+.trust-showcase-shell {
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  border-radius: 2rem;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.52));
+}
+
+@media (min-width: 640px) {
+  .trust-showcase-shell {
+    padding: 1.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .trust-showcase-shell {
+    padding: 1.8rem;
+  }
+}
+
+.trust-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  bottom: 28px;
+  left: 0;
+  width: 6px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f97316, #ea580c);
+}
+
+.trust-ambient-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(34px);
+  opacity: 0.28;
+  pointer-events: none;
+  animation: trustOrbFloat 6.5s ease-in-out infinite;
+}
+
+.trust-ambient-orb-one {
+  top: -40px;
+  right: -20px;
+  height: 180px;
+  width: 180px;
+  background: #fdba74;
+}
+
+.trust-ambient-orb-two {
+  bottom: -50px;
+  left: 42%;
+  height: 140px;
+  width: 140px;
+  background: #fed7aa;
+  animation-delay: 1.2s;
+}
+
+.trust-feature-card {
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.trust-feature-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px -25px rgba(15, 23, 42, 0.45);
+}
+
+.trust-feature-icon {
+  animation: trustIconPulse 3.4s ease-in-out infinite;
+}
+
+.trust-check-item {
+  opacity: 0;
+  animation: trustCheckIn 560ms ease forwards;
+}
+
+@keyframes heroSlideZoom {
+  0% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+.hero-carousel {
+  position: relative;
+  min-height: 350px;
+  overflow: hidden;
+  border-radius: 1.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: #0f172a;
+  box-shadow: 0 28px 50px -34px rgba(15, 23, 42, 0.85);
+}
+
+@media (min-width: 1024px) {
+  .hero-carousel {
+    min-height: 430px;
+  }
+}
+
+.hero-carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 700ms ease;
+}
+
+.hero-carousel-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-carousel-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
+.hero-carousel-image.is-zooming {
+  animation: heroSlideZoom 5s ease-out forwards;
+}
+
+.hero-carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(15, 23, 42, 0.86) 10%, rgba(15, 23, 42, 0.42) 52%, rgba(15, 23, 42, 0.12) 80%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.65));
+  pointer-events: none;
+}
+
+.hero-carousel-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.4rem 4.9rem;
+}
+
+@media (min-width: 640px) {
+  .hero-carousel-content {
+    padding: 2.4rem 2.2rem 5.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-carousel-content {
+    padding: 3rem 3.2rem 5.8rem;
+  }
+}
+
+.hero-carousel-kicker {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid rgba(251, 146, 60, 0.38);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.34rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fdba74;
+}
+
+.hero-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.6rem;
+  max-width: 36rem;
+}
+
+@media (min-width: 640px) {
+  .hero-metrics-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.hero-metric-card {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.65rem 0.8rem;
+  backdrop-filter: blur(2px);
+}
+
+.hero-metric-label {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: rgba(253, 186, 116, 0.98);
+}
+
+.hero-metric-value {
+  margin-top: 0.18rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero-carousel-controls {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 4;
+  display: flex;
+  gap: 0.55rem;
+}
+
+.hero-carousel-button {
+  display: inline-flex;
+  height: 2.2rem;
+  width: 2.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 250ms ease;
+}
+
+.hero-carousel-button:hover {
+  background: rgba(249, 115, 22, 0.9);
+  border-color: rgba(249, 115, 22, 0.9);
+  transform: translateY(-1px);
+}
+
+.hero-carousel-dots {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  gap: 0.5rem;
+  transform: translateX(-50%);
+}
+
+.hero-carousel-dot {
+  height: 0.56rem;
+  width: 0.56rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  background: rgba(255, 255, 255, 0.32);
+  transition: all 260ms ease;
+}
+
+.hero-carousel-dot.is-active {
+  width: 1.9rem;
+  border-color: #f97316;
+  background: #f97316;
+}
