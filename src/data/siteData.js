@@ -282,28 +282,28 @@ export const blogPosts = [
     title: 'Year-End Tax Readiness Checklist for SMEs',
     excerpt:
       'A practical guide to organize documents, avoid penalties and close the financial year with confidence.',
-    image: '/blog/tax-updates.svg',
+    image: 'blog/tax-updates.svg',
   },
   {
     category: 'GST Updates',
     title: 'GST Filing Controls Every Finance Team Should Adopt',
     excerpt:
       'Build a reliable monthly filing process with reconciliation checkpoints and compliance controls.',
-    image: '/blog/gst-updates.svg',
+    image: 'blog/gst-updates.svg',
   },
   {
     category: 'Startup Guides',
     title: 'Choosing the Right Structure: Pvt Ltd vs LLP',
     excerpt:
       'Compare taxation, compliance and fundraising impact before registering your startup entity.',
-    image: '/blog/startup-guides.svg',
+    image: 'blog/startup-guides.svg',
   },
   {
     category: 'Business Advisory',
     title: 'Financial Compliance Habits That Improve Profitability',
     excerpt:
       'How strong accounting systems and advisory-led planning can support strategic business growth.',
-    image: '/blog/business-advisory.svg',
+    image: 'blog/business-advisory.svg',
   },
 ]
 

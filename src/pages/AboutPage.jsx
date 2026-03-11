@@ -75,7 +75,7 @@ function AboutPage() {
               <Reveal>
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
                   <img 
-                    src="/owner.png" 
+                    src="owner.png" 
                     alt="Founder Aditya Sharma" 
                     className="w-full aspect-[4/5] object-cover"
                   />

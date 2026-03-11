@@ -15,7 +15,7 @@ function Footer() {
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="group">
             <div className="mb-8">
-              <img src="/logo.png" alt={companyName} className="h-28 sm:h-32 w-auto object-contain drop-shadow-md" />
+              <img src="logo.png" alt={companyName} className="h-28 sm:h-32 w-auto object-contain drop-shadow-md" />
             </div>
             <p className="inline-block px-3 py-1 mb-4 rounded-full bg-orange-50 border border-orange-100 text-[10px] font-extrabold uppercase tracking-[0.2em] text-orange-500 shadow-sm transition-all group-hover:scale-105">
               About Company

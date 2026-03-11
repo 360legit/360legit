@@ -214,23 +214,23 @@ function Navbar() {
       {/* Main Navbar */}
       <div className="section-shell relative">
         <nav
-          className={`flex h-20 items-center justify-between rounded-b-2xl transition-all duration-500 px-6 sm:px-8 ${
+          className={`flex h-20 items-center justify-between rounded-b-2xl transition-all duration-500 px-4 sm:px-6 ${
             isScrolled
               ? 'bg-white shadow-2xl border-x border-b border-orange-50'
               : 'bg-white border-transparent'
           }`}
         >
           {/* Logo Section */}
-          <Link to="/" className="flex items-center gap-3 group shrink-0 py-1">
-            <img src="/logo.png" alt="360 Legit Business Logo" className="h-16 sm:h-[72px] w-auto object-contain transition-transform group-hover:scale-105 duration-300 drop-shadow-sm" />
-            <div className="flex flex-col leading-tight hidden sm:flex">
-              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-orange-500">Premium Advisory</span>
-              <span className="text-[14px] font-extrabold text-[#1B3942] tracking-tight">360 Legit Business</span>
+          <Link to="/" className="flex items-center gap-2 group shrink-0 py-1">
+            <img src="logo.png" alt="360 Legit Business Logo" className="h-14 sm:h-[64px] w-auto object-contain transition-transform group-hover:scale-105 duration-300 drop-shadow-sm" />
+            <div className="flex flex-col leading-tight hidden xl:flex">
+              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-orange-500">Premium Advisory</span>
+              <span className="text-[12px] font-extrabold text-[#1B3942] tracking-tight">360 Legit Business</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-x-6 xl:gap-x-8">
+          <div className="hidden lg:flex items-center gap-x-3 xl:gap-x-5 whitespace-nowrap">
             {navLinks.map((link) => {
               if (link.path !== '/services') {
                 return (
