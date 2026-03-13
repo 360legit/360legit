@@ -184,14 +184,9 @@ function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-10">
             <div className="flex items-center gap-3 bg-slate-50 py-3 px-8 rounded-full border border-slate-100 shadow-inner group">
               <span className="text-slate-400 italic font-bold">Crafted With Trust By</span>
-              <a 
-                href="https://yuvancreations.github.io/yuvancreations/" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="text-[#1B3942] group-hover:text-orange-600 transition-colors font-black tracking-[0.2em]"
-              >
-                YUVAN CREATIONS
-              </a>
+              <span className="text-[#1B3942] font-black tracking-[0.2em]">
+                {companyName}
+              </span>
             </div>
             
             <a 
